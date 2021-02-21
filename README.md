@@ -38,7 +38,7 @@
 ## Build
 1. Build the docker image:
    ```
-   $ docker build -t uofthacks-2021-api .
+   docker build -t uofthacks-2021-api .
    ```
 2. Run and test the docker image:
    ```
@@ -48,30 +48,5 @@
 ## Deploy to Heroku
 [Docs](https://devcenter.heroku.com/articles/container-registry-and-runtime)
 
-1. Go to the [Heroku Dashboard](https://dashboard.heroku.com/apps/)
-2. [Onboard your new app](https://dashboard.heroku.com/new-app) by giving it a name and assign it
-the region closest to you, and declaring a staging pipeline.![img.png](.github/assets/deploy-heroku-2.png)
-3. Run the following command on your terminal where the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) is installed.
-   ``` 
-   heroku stack:set container -a uofthacks-2021-app
-   ```
-   which will ask you to sign in and output the following message once completed:
-   ![img.png](.github/assets/deploy-heroku-3.png)
+Live demo
    
-4. Go to the [Heroku deployment pipeline dashboard](https://dashboard.heroku.com/apps/uofthacks-2021-app/deploy/github):
-   
-   Connect your Github account by clicking on the Github button beside `Deployment method`
-   
-   ![img.png](.github/assets/deploy-heroku-4.png)
-   
-5. `[OPTIONAL]` Create a `release` branch in your repository, and it will show up under the dropdown
-beside `Automatic deploys`:
-   ``` 
-   git branch release
-   git push --set-upstream origin release
-   ```
-6. If you did the optional step, all you have to do is make a [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests)
-to the `release` branch, and once approved and merged, the build will take place. Very much like what happens on the day to day as a developer.
-   
-7. If you didn't do the `[OPTIONAL]` step then you can manually push it to Heroku either using the UI or using the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli#download-and-install)
-   ![img.png](.github/assets/deploy-heroku-7.png)
